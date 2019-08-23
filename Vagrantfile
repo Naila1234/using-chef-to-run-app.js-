@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     #db.hostsupdater.aliases = ["database.local"]
     db.vm.synced_folder "environment/db", "/home/ubuntu/environment"
     db.vm.provision "chef_solo" do |chef|
-        chef.add_recipe "node::default"
+        chef.add_recipe "mongo::default"
         chef.arguments = "--chef-license accept"
       end
     end
